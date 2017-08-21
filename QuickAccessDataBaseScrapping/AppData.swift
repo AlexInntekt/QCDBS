@@ -9,12 +9,6 @@
 import Foundation
 import UIKit
 
-var allData = [Int]()
 
-func createObjects()
-{
-    for object in 0...100
-    {
-        allData.append(object)
-    }
-}
+  var allData = ["Acura","Alfa Romeo","Aston Martin","Audi","Bentley","Bugatti","Buick","Cadillac","Chevrolet","Chrysler","Citroen","Dacia","Dodge","Ferrari","Fiat","Ford","Geely","General Motors","GMC","Honda","Hyundai","Infiniti","Jaguar","Jeep","Kia","Koenigsegg","Lada","Lamborghini","Land Rover", "Lexus","Maserati","Mazda","McLaren","Mercedes-Benz","Mini","Mitsubishi","Nissan","Pagani","Peugeot","Porsche","Ram","Renault","Rolls Royce","Saab","Subaru","Suzuki","Tata Motors","Tesla","Toyota","Volskwagen","Volvo"]
+

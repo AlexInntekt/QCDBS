@@ -25,7 +25,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     let searchController = UISearchController(searchResultsController: nil)
     
-    var filteredData = [Int]()
+    var filteredData = [String]()
 
     
     override func viewDidLoad()
@@ -33,8 +33,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-
-        createObjects()
  
         
         tableView.dataSource = self
@@ -70,7 +68,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
         
-        let object: Int
+        let object: String
         if isFiltering() {
             object = filteredData[indexPath.row]
         } else {
@@ -88,7 +86,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        let data = String(indexPath.row)
+        let data = String(allData[indexPath.row])
         
         performSegue(withIdentifier: "showObjectDetails", sender: data)
     }
@@ -114,7 +112,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All")
     {
-        filteredData = allData.filter({( data : Int) -> Bool in
+        filteredData = allData.filter({( data : String) -> Bool in
             return String(data).lowercased().contains(searchText.lowercased())
         })
         
