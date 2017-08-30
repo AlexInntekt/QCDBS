@@ -83,10 +83,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
 
     
-    
+    //when a cell is tapped, the information contained is transfered with segue. The specific object will be fetched by index, from an array ('allData' or 'filteredData') depending if the searching is active or not:
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        let data = String(allData[indexPath.row])
+        var data :String = ""
+        
+        if(isFiltering())
+        {
+           data = String(filteredData[indexPath.row])
+        }
+        else
+        {
+           data = String(allData[indexPath.row])
+        }
         
         performSegue(withIdentifier: "showObjectDetails", sender: data)
     }
